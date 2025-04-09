@@ -1062,7 +1062,7 @@ if submit:
             bounces_0_12 = count_bounces_0_12_months(data)
             print("Bounces in last 0-12 months:", bounces_0_12)
 
-            banks = ['HERO', 'TATA', 'BAJAJ','IDFC', 'YES BANK', 'PIRAMAL', 'HDFC', 'ICICI', 'POONAWALA', 'AU', 'CHOLA']
+            banks = ['HERO', 'TATA', 'BAJAJ','IDFC', 'YES BANK', 'PIRAMAL', 'HDFC', 'ICICI', 'POONAWALA', 'AU', 'CHOLA','AXIS']
 
             accepted_banks = []
             rejected_banks = {}

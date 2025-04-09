@@ -1053,7 +1053,7 @@ if submit:
             print("DPD 45 and Above Count:", dpd_45_above)
 
             # Sample test call
-            bounce_0_3 = get_recent_bounces(data, current_date="2025-04-01")
+            bounce_0_3 = get_recent_bounces(data, current_date=datetime.today().strftime('%Y-%m-%d'))
             print("Total bounces in 0–3 months:", bounce_0_3)
 
             bounces_0_6 = count_bounces_0_6_months(data)

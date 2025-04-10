@@ -745,6 +745,7 @@ def count_dpd_45_above_last_12_months(data):
                         count += 1
     return count
 def get_recent_bounces(data, current_date=None):
+    print(current_date)
     # Set current date
     if current_date is None:
         current_date = datetime.today()
@@ -835,6 +836,100 @@ def count_bounces_0_12_months(json_data):
 
 
 
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+
+def count_bounces_by_period(data, current_date=None):
+    if current_date is None:
+        current_date = datetime.today()
+    else:
+        current_date = datetime.strptime(current_date, "%Y-%m-%d")
+
+    # Prepare timeframes
+    month_0_3 = current_date - relativedelta(months=3)
+    month_0_6 = current_date - relativedelta(months=6)
+    month_0_12 = current_date - relativedelta(months=12)
+
+    bounces = {
+        "bounces_0_3_months": 0,
+        "bounces_0_6_months": 0,
+        "bounces_0_12_months": 0
+    }
+
+    for account in data.get("data", {}).get("credit_report", [])[0].get("accounts", []):
+        account_type = account.get("accountType", "").lower()
+        if "loan" not in account_type:
+            continue  # Filter only loan accounts
+
+        for record in account.get("monthlyPayStatus", []):
+            date_str = record.get("date")
+            status_str = record.get("status")
+
+            if not date_str or not status_str or status_str.lower() == "xxx":
+                continue
+
+            try:
+                dpd_date = datetime.strptime(date_str, "%Y-%m-%d")
+                dpd = int(status_str)
+            except (ValueError, TypeError):
+                continue
+
+            if dpd >= 30:
+                if dpd_date >= month_0_12:
+                    bounces["bounces_0_12_months"] += 1
+                if dpd_date >= month_0_6:
+                    bounces["bounces_0_6_months"] += 1
+                if dpd_date >= month_0_3:
+                    bounces["bounces_0_3_months"] += 1
+
+    return bounces
+
+def count_custom_dpd_buckets(data):
+    today = datetime.today()
+    start_date = (today.replace(day=1) - relativedelta(months=12))
+    end_date = today
+
+    dpd_counts = {
+        "dpd_1_30": 0,
+        "dpd_1_45": 0,
+        "dpd_1_above": 0,
+        "dpd_31_44": 0,
+        "dpd_45_above": 0,
+    }
+
+    for account in data.get("data", {}).get("credit_report", [])[0].get("accounts", []):
+        account_type = account.get("accountType", "").lower()
+
+        # Consider only loan-type accounts (adjust as needed)
+        if "loan" not in account_type:
+            continue
+
+        for record in account.get("monthlyPayStatus", []):
+            date_str = record.get("date")
+            status_str = record.get("status")
+
+            if not date_str or not status_str or status_str.lower() == "xxx":
+                continue
+
+            try:
+                dpd_date = datetime.strptime(date_str, "%Y-%m-%d")
+                dpd_days = int(status_str)
+            except (ValueError, TypeError):
+                continue
+
+            if start_date <= dpd_date <= end_date and dpd_days > 0:
+                if 1 <= dpd_days <= 30:
+                    dpd_counts["dpd_1_30"] += 1
+                if 1 <= dpd_days <= 45:
+                    dpd_counts["dpd_1_45"] += 1
+                if dpd_days >= 1:
+                    dpd_counts["dpd_1_above"] += 1
+                if 31 <= dpd_days <= 44:
+                    dpd_counts["dpd_31_44"] += 1
+                if dpd_days >= 45:
+                    dpd_counts["dpd_45_above"] += 1
+
+    return dpd_counts
 
 # Function to call the CIBIL API
 def fetch_cibil_data(mobile, pan, name, gender, consent, token):
@@ -910,11 +1005,11 @@ st.markdown("### Please enter your details below:")
 
 # User Input Form with Sidebar
 with st.form("user_form"):
-    mobile = st.text_input("📞 Mobile Number", "")
-    pan = st.text_input("🆔 PAN", "")
-    name = st.text_input("👤 Name", "")
+    mobile = st.text_input("📞 Mobile Number", "8554947999")
+    pan = st.text_input("🆔 PAN", "AQUPN6092K")
+    name = st.text_input("👤 Name", "Prasad Naik")
     gender = st.selectbox("⚧ Gender", ["Male", "Female", "Other"], index=0)
-    id_number = st.text_input("🆔 Vehicle ID", "")
+    id_number = st.text_input("🆔 Vehicle ID", "MH04KW6003")
     consent = st.selectbox("✔ Consent", ["Y", "N"], index=0)
     submit = st.form_submit_button("🚀 Submit")
 # TOKEN for API authorization
@@ -945,10 +1040,10 @@ if submit:
                 #st.json(data_car)
 
 #https://developers.kudosfinance.in/docs/list-of-cibil-field-input
-            #file_path = "data3.json"
+            #file_path = "data7.json"
             #data = load_and_print_json(file_path)
             ## Example usage
-            #file_path = "car3.json"
+            #file_path = "car7.json"
             #data_car = load_and_print_json(file_path)
             # Example usage (you'll ask for specific fields)
             name = get_field("data.name")  # Would print: Vishal Rathore
@@ -1038,29 +1133,31 @@ if submit:
 
 
 
-            dpd_1_30_count = count_dpd_1_30_last_12_months(data)
-            print("DPD 1-30 in last 12 months (including current):", dpd_1_30_count)
-
             
-            dpd_1_45_count = count_dpd_1_45_last_12_months(data)
-            print("DPD 1-45 in last 12 months (including current):", dpd_1_45_count)
+            # Example usage
+            dpd_summary = count_custom_dpd_buckets(data)
+            print("Custom DPD Summary in Last 12 Months:", dpd_summary)
+
+            # Example usage
+            bounces = count_bounces_by_period(data, current_date="2025-04-01")
+            print("Bounce Summary:")
+            print(bounces)
+            dpd_counts = {
+                                 "dpd_1_30": 0,
+                                 "dpd_1_45": 0,
+                                 "dpd_1_above": 0,
+                                 "dpd_31_44": 0,
+                                 "dpd_45_above": 0,
+                            }
+
+            dpd_1_30_count =  dpd_counts["dpd_1_30"]
+            dpd_1_45_count = dpd_counts["dpd_1_45"]
+            dpd_31_44_count = dpd_counts["dpd_1_above"]
+            dpd_45_above = dpd_counts["dpd_45_above"]
             
-            dpd_31_44_count = count_dpd_31_44_last_12_months(data)
-            print(f"DPD 31–44 Count in last 12 months: {dpd_31_44_count}")
+            bounce_0_3 = bounces["bounces_0_3_months"]
 
-
-            dpd_45_above = count_dpd_45_above_last_12_months(data)
-            print("DPD 45 and Above Count:", dpd_45_above)
-
-            # Sample test call
-            bounce_0_3 = get_recent_bounces(data, current_date=datetime.today().strftime('%Y-%m-%d'))
-            print("Total bounces in 0–3 months:", bounce_0_3)
-
-            bounces_0_6 = count_bounces_0_6_months(data)
-            print("Bounces in last 0-6 months:", bounces_0_6)
-
-            bounces_0_12 = count_bounces_0_12_months(data)
-            print("Bounces in last 0-12 months:", bounces_0_12)
+            bounces_0_6 =  bounces["bounces_0_6_months"]
 
             banks = ['HERO', 'TATA', 'BAJAJ','IDFC', 'YES BANK', 'PIRAMAL', 'HDFC', 'ICICI', 'POONAWALA', 'AU', 'CHOLA','AXIS']
 

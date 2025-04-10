@@ -1132,7 +1132,7 @@ if submit:
             print(f"Car Owner Age (based on CIBIL birthDate): {year_diff} years")
 
 
-
+           
             
             # Example usage
             dpd_summary = count_custom_dpd_buckets(data)
@@ -1142,18 +1142,17 @@ if submit:
             bounces = count_bounces_by_period(data, current_date="2025-04-01")
             print("Bounce Summary:")
             print(bounces)
-            dpd_counts = {
-                                 "dpd_1_30": 0,
-                                 "dpd_1_45": 0,
-                                 "dpd_1_above": 0,
-                                 "dpd_31_44": 0,
-                                 "dpd_45_above": 0,
-                            }
-
-            dpd_1_30_count =  dpd_counts["dpd_1_30"]
-            dpd_1_45_count = dpd_counts["dpd_1_45"]
-            dpd_31_44_count = dpd_counts["dpd_1_above"]
-            dpd_45_above = dpd_counts["dpd_45_above"]
+           
+            # Store individual values from summary dictionary into variables
+            dpd_1_30_count = dpd_summary.get("dpd_1_30", 0)
+            dpd_1_45_count = dpd_summary.get("dpd_1_45", 0)
+            dpd_31_44_count = dpd_summary.get("dpd_31_44", 0)
+            dpd_45_above = dpd_summary.get("dpd_45_above", 0)
+            
+            print(dpd_1_30_count)
+            print(dpd_1_45_count)
+            print(dpd_31_44_count)
+            print(dpd_45_above)
             
             bounce_0_3 = bounces["bounces_0_3_months"]
 
@@ -1178,12 +1177,17 @@ if submit:
                     int(bounce_0_3), 
                     int(bounces_0_6)
                 )
-
+            
                 if result == "Eligible for Loan":
                     accepted_banks.append(bank)
                 else:
                     rejected_banks[bank] = result  # Store rejection reason
+            bank_rules = BANK_RULES.get("HDFC")
+            
 
+            print(dpd_45_above)
+            A = check_condition(dpd_45_above, bank_rules["dpd_45_above"])
+            print(A)
             # Streamlit UI
             st.title("Loan Eligibility Results")
 

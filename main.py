@@ -1530,11 +1530,11 @@ st.markdown("### Please enter your details below:")
 
 # User Input Form with Sidebar
 with st.form("user_form"):
-    mobile = st.text_input("📞 Mobile Number", "8554947999")
-    pan = st.text_input("🆔 PAN", "AQUPN6092K")
-    name = st.text_input("👤 Name", "Prasad Naik")
+    mobile = st.text_input("📞 Mobile Number", "")
+    pan = st.text_input("🆔 PAN", "")
+    name = st.text_input("👤 Name", "")
     gender = st.selectbox("⚧ Gender", ["Male", "Female", "Other"], index=0)
-    id_number = st.text_input("🆔 Vehicle ID", "MH04KW6003")
+    id_number = st.text_input("🆔 Vehicle ID", "")
     consent = st.selectbox("✔ Consent", ["Y", "N"], index=0)
     submit = st.form_submit_button("🚀 Submit")
 # TOKEN for API authorization

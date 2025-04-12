@@ -23,6 +23,9 @@ BANK_RULES = {
         "dpd_1_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
         ],
+        "dpd_1_above": [
+            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
+        ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "REJECT")
         ],
@@ -46,7 +49,38 @@ BANK_RULES = {
         ],
         "bounces_0_6_months": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "PASS"), (4, float('inf'), "REJECT")
+        ],
+         "mother_0_3": [
+            (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "PASS"), (4, float('inf'), "PASS")
+        ],
+        "mother_4_6": [
+            (0, 0, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_7_12": [
+            (0, 0, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_13_24": [
+            (0, 0, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_25_60": [
+            (0, 0, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_6": [
+            (0, 0, "PASS"),(4, float('inf'), "PASS")
+        ],
+                "mother_0_9": [
+            (0, 0, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_12": [
+            (0, 0, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_24": [
+            (0, 0, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_60": [
+            (0, 0, "PASS"),(4, float('inf'), "PASS")
         ]
+
     },
     "IDFC": {
         "cibil_score": [
@@ -61,6 +95,9 @@ BANK_RULES = {
         ],
         "dpd_1_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
+        ],
+        "dpd_1_above": [
+            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "REJECT")
@@ -86,6 +123,36 @@ BANK_RULES = {
         ],
         "bounces_0_6_months": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "REJECT"), (4, float('inf'), "REJECT")
+        ],
+        "mother_0_3": [
+            (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, float('inf'), "REJECT")
+        ],
+        "mother_4_6": [
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
+        ],
+        "mother_7_12": [
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
+        ],
+        "mother_13_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_25_60": [
+            (0, 5, "PASS"),(6, float('inf'), "PASS")
+        ],
+        "mother_0_6": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_9": [
+            (0, 0, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_12": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_60": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
         ]
     },
 
@@ -102,6 +169,9 @@ BANK_RULES = {
         ],
         "dpd_1_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
+        ],
+        "dpd_1_above": [
+            (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "REJECT")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 4, "PASS"), (5, float('inf'), "REJECT")
@@ -126,6 +196,36 @@ BANK_RULES = {
         ],
         "bounces_0_6_months": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "PASS"), (4, float('inf'), "REJECT")
+        ],
+                "mother_0_3": [
+            (0, 0, "PASS"),(1, float('inf'), "REJECT")
+        ],
+        "mother_4_6": [
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
+        ],
+        "mother_7_12": [
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
+        ],
+        "mother_13_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_25_60": [
+            (0, 5, "PASS"),(6, float('inf'), "PASS")
+        ],
+        "mother_0_6": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_9": [
+            (0, 0, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_12": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_60": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
         ]
     },
 
@@ -142,6 +242,9 @@ BANK_RULES = {
         ],
         "dpd_1_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
+        ],
+        "dpd_1_above": [
+            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 10, "REJECT"), (11, float('inf'), "REJECT")
@@ -166,6 +269,36 @@ BANK_RULES = {
         ],
         "bounces_0_6_months": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "PASS"), (4, float('inf'), "REJECT")
+        ],
+        "mother_0_3": [
+            (0, 0, "PASS"),(1, float('inf'), "REJECT")
+        ],
+        "mother_4_6": [
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
+        ],
+        "mother_7_12": [
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
+        ],
+        "mother_13_24": [
+            (0, 3, "PASS"),(4, float('inf'), "REJECT")
+        ],
+        "mother_25_60": [
+            (0, 5, "PASS"),(6, float('inf'), "REJECT")
+        ],
+        "mother_0_6": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_9": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_12": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_60": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
         ]
     },
     "AXIS": {
@@ -181,6 +314,9 @@ BANK_RULES = {
         ],
         "dpd_1_44": [
             (0, 0, "PASS"), (1, 5, "PASS"),(6,10,"PASS"), (11, float('inf'), "REJECT")
+        ],
+        "dpd_1_above": [
+            (0, 0, "PASS"), (1, 9, "PASS"), (10, float('inf'), "REJECT")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "PASS"), (11, float('inf'), "PASS")
@@ -205,7 +341,38 @@ BANK_RULES = {
         ],
         "bounces_0_6_months": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "PASS"), (4, float('inf'), "REJECT")
+        ],
+        "mother_0_3": [
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
+        ],
+        "mother_4_6": [
+            (0, 2, "PASS"),(3, float('inf'), "PASS")
+        ],
+        "mother_7_12": [
+            (0, 2, "PASS"),(3, float('inf'), "PASS")
+        ],
+        "mother_13_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_25_60": [
+            (0, 5, "PASS"),(6, float('inf'), "PASS")
+        ],
+        "mother_0_6": [
+            (0, 3, "PASS"),(4, float('inf'), "REJECT")
+        ],
+        "mother_0_9": [
+            (0, 3, "PASS"),(4, float('inf'), "REJECT")
+        ],
+        "mother_0_12": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_60": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
         ]
+
     },
      "YES BANK": {
         "cibil_score": [
@@ -218,12 +385,16 @@ BANK_RULES = {
         "dpd_1_30": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "REJECT"), (11, float('inf'), "REJECT")
         ],
-                "dpd_1_44": [
+        "dpd_1_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
+        ],
+        "dpd_1_above": [
+            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"),(2, float('inf'), "REJECT")
         ],
+
         "dpd_45_above": [
             (0, 0, "PASS"), (1, float('inf'), "REJECT")
         ],
@@ -244,6 +415,36 @@ BANK_RULES = {
         ],
         "bounces_0_6_months": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "REJECT"), (4, float('inf'), "REJECT")
+        ],
+        "mother_0_3": [
+            (0, 0, "PASS"),(1, float('inf'), "REJECT")
+        ],
+        "mother_4_6": [
+            (0, 0, "PASS"),(1, float('inf'), "REJECT")
+        ],
+        "mother_7_12": [
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
+        ],
+        "mother_13_24": [
+            (0, 3, "PASS"),(4, float('inf'), "REJECT")
+        ],
+        "mother_25_60": [
+            (0, 5, "PASS"),(6, float('inf'), "REJECT")
+        ],
+        "mother_0_6": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_9": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_12": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_60": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
         ]
     },
      "PIRAMAL": {
@@ -257,8 +458,11 @@ BANK_RULES = {
         "dpd_1_30": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "REJECT"), (11, float('inf'), "REJECT")
         ],
-                "dpd_1_44": [
+        "dpd_1_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
+        ],
+        "dpd_1_above": [
+            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 10, "REJECT"), (11, float('inf'), "REJECT")
@@ -283,6 +487,36 @@ BANK_RULES = {
         ],
         "bounces_0_6_months": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "PASS"), (4, float('inf'), "REJECT")
+        ],
+        "mother_0_3": [
+            (0, 0, "PASS"),(1, float('inf'), "REJECT")
+        ],
+        "mother_4_6": [
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
+        ],
+        "mother_7_12": [
+            (0, 3, "PASS"),(4, float('inf'), "REJECT")
+        ],
+        "mother_13_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_25_60": [
+            (0, 5, "PASS"),(6, float('inf'), "PASS")
+        ],
+        "mother_0_6": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_9": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_12": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_60": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
         ]
     },
      "HDFC": {
@@ -296,8 +530,11 @@ BANK_RULES = {
         "dpd_1_30": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "REJECT"), (11, float('inf'), "REJECT")
         ],
-                "dpd_1_44": [
+        "dpd_1_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
+        ],
+        "dpd_1_above": [
+            (0, 5, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 2, "PASS"), (3, 10, "REJECT"), (11, float('inf'), "REJECT")
@@ -322,6 +559,36 @@ BANK_RULES = {
         ],
         "bounces_0_6_months": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "REJECT"), (4, float('inf'), "REJECT")
+        ],
+        "mother_0_3": [
+            (0, 1, "PASS"),(2, float('inf'), "REJECT")
+        ],
+        "mother_4_6": [
+            (0, 2, "PASS"),(3, float('inf'), "PASS")
+        ],
+        "mother_7_12": [
+            (0, 2, "PASS"),(3, float('inf'), "PASS")
+        ],
+        "mother_13_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_25_60": [
+            (0, 5, "PASS"),(6, float('inf'), "PASS")
+        ],
+        "mother_0_6": [
+            (0, 1, "PASS"),(2, float('inf'), "REJECT")
+        ],
+        "mother_0_9": [
+            (0, 1, "PASS"),(2, float('inf'), "REJECT")
+        ],
+        "mother_0_12": [
+            (0, 1, "PASS"),(4, float('inf'), "REJECT")
+        ],
+        "mother_0_24": [
+            (0, 2, "PASS"),(3, float('inf'), "PASS")
+        ],
+        "mother_0_60": [
+            (0, 4, "PASS"),(5, float('inf'), "PASS")
         ]
     },
     "ICICI": {
@@ -337,6 +604,9 @@ BANK_RULES = {
         ],
         "dpd_1_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
+        ],
+        "dpd_1_above": [
+            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 10, "REJECT"), (11, float('inf'), "REJECT")
@@ -361,6 +631,36 @@ BANK_RULES = {
         ],
         "bounces_0_6_months": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "PASS"), (4, float('inf'), "REJECT")
+        ],
+        "mother_0_3": [
+            (0, 0, "PASS"),(1, float('inf'), "REJECT")
+        ],
+        "mother_4_6": [
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
+        ],
+        "mother_7_12": [
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
+        ],
+        "mother_13_24": [
+            (0, 3, "PASS"),(4, float('inf'), "REJECT")
+        ],
+        "mother_25_60": [
+            (0, 5, "PASS"),(6, float('inf'), "REJECT")
+        ],
+        "mother_0_6": [
+            (0, 3, "PASS"),(4, float('inf'), "REJECT")
+        ],
+        "mother_0_9": [
+            (0, 3, "PASS"),(4, float('inf'), "REJECT")
+        ],
+        "mother_0_12": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_60": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
         ]
     },
     "POONAWALA": {
@@ -374,8 +674,11 @@ BANK_RULES = {
         "dpd_1_30": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "REJECT"), (11, float('inf'), "REJECT")
         ],
-                "dpd_1_44": [
+        "dpd_1_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
+        ],
+        "dpd_1_above": [
+            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 10, "REJECT"), (11, float('inf'), "REJECT")
@@ -400,6 +703,36 @@ BANK_RULES = {
         ],
         "bounces_0_6_months": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "PASS"), (4, float('inf'), "REJECT")
+        ],
+        "mother_0_3": [
+            (0, 1, "PASS"),(2, float('inf'), "REJECT")
+        ],
+        "mother_4_6": [
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
+        ],
+        "mother_7_12": [
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
+        ],
+        "mother_13_24": [
+            (0, 3, "PASS"),(4, float('inf'), "REJECT")
+        ],
+        "mother_25_60": [
+            (0, 5, "PASS"),(6, float('inf'), "REJECT")
+        ],
+        "mother_0_6": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_9": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_12": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_60": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
         ]
     },
     "AU": {
@@ -416,6 +749,9 @@ BANK_RULES = {
                 "dpd_1_44": [
             (0, 0, "PASS"), (1, 10, "PASS"), (11, float('inf'), "REJECT")
         ],
+        "dpd_1_above": [
+            (0, 0, "PASS"), (1, 9, "PASS"), (10, float('inf'), "REJECT")
+        ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "PASS"), (11, float('inf'), "PASS")
         ],
@@ -439,6 +775,36 @@ BANK_RULES = {
         ],
         "bounces_0_6_months": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "PASS"), (4, float('inf'), "REJECT")
+        ],
+        "mother_0_3": [
+            (0, 0, "PASS"),(1, float('inf'), "PASS")
+        ],
+        "mother_4_6": [
+            (0, 2, "PASS"),(3, float('inf'), "PASS")
+        ],
+        "mother_7_12": [
+            (0, 2, "PASS"),(3, float('inf'), "PASS")
+        ],
+        "mother_13_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_25_60": [
+            (0, 5, "PASS"),(6, float('inf'), "PASS")
+        ],
+        "mother_0_6": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_9": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_12": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_60": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
         ]
     },
     "CHOLA": {
@@ -455,6 +821,9 @@ BANK_RULES = {
                 "dpd_1_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
         ],
+                "dpd_1_above": [
+            (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "REJECT")
+        ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "PASS"), (11, float('inf'), "PASS")
         ],
@@ -478,6 +847,36 @@ BANK_RULES = {
         ],
         "bounces_0_6_months": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "PASS"), (4, float('inf'), "REJECT")
+        ],
+        "mother_0_3": [
+            (0, 0, "PASS"),(1, float('inf'), "PASS")
+        ],
+        "mother_4_6": [
+            (0, 2, "PASS"),(3, float('inf'), "PASS")
+        ],
+        "mother_7_12": [
+            (0, 2, "PASS"),(3, float('inf'), "PASS")
+        ],
+        "mother_13_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_25_60": [
+            (0, 5, "PASS"),(6, float('inf'), "PASS")
+        ],
+        "mother_0_6": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_9": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_12": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_24": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
+        ],
+        "mother_0_60": [
+            (0, 3, "PASS"),(4, float('inf'), "PASS")
         ]
     },
 
@@ -485,6 +884,111 @@ BANK_RULES = {
 
 }
 
+
+
+
+def find_mother_auto_loan(data, data_car):
+    registration_date_str = data_car["data"].get("registration_date")
+    if not registration_date_str:
+        return None
+
+    registration_date = datetime.strptime(registration_date_str, "%Y-%m-%d")
+    valid_months = {
+        (registration_date - relativedelta(months=i)).strftime("%Y-%m")
+        for i in range(3)
+    }
+
+    accounts = data.get("data", {}).get("credit_report", [{}])[0].get("accounts", [])
+
+    for account in accounts:
+        account_type = account.get("accountType", "").lower()
+        date_opened = account.get("dateOpened")
+
+        if not date_opened or ("auto" not in account_type and "car" not in account_type):
+            continue
+
+        try:
+            loan_open_month = datetime.strptime(date_opened, "%Y-%m-%d").strftime("%Y-%m")
+            if loan_open_month in valid_months:
+                return account  # Return the full account for further use
+        except ValueError:
+            continue
+
+    return None
+
+def calculate_bounce_ranges(account, as_of_date=None):
+    if as_of_date is None:
+        as_of_date = datetime.today()
+
+    monthly_statuses = account.get("monthlyPayStatus", [])
+    dpd_records = [
+        (datetime.strptime(entry["date"], "%Y-%m-%d"), entry["status"])
+        for entry in monthly_statuses
+        if "status" in entry and entry["status"].isdigit() and int(entry["status"]) > 0
+    ]
+
+    # Define bucket ranges
+    buckets = {
+        "0_3": 3,
+        "4_6": 6,
+        "7_12": 12,
+        "13_24": 24,
+        "25_60": 60,
+    }
+
+    bounce_summary = {
+        "0_3": 0, "4_6": 0, "7_12": 0, "13_24": 0, "25_60": 0,
+        "0_6": 0, "0_9": 0, "0_12": 0, "0_24": 0, "0_60": 0
+    }
+
+    for dpd_date, status in dpd_records:
+        month_diff = (as_of_date.year - dpd_date.year) * 12 + (as_of_date.month - dpd_date.month)
+
+        if month_diff < 0 or month_diff > 60:
+            continue
+
+        if month_diff <= 2:
+            bounce_summary["0_3"] += 1
+        elif 3 <= month_diff <= 5:
+            bounce_summary["4_6"] += 1
+        elif 6 <= month_diff <= 11:
+            bounce_summary["7_12"] += 1
+        elif 12 <= month_diff <= 23:
+            bounce_summary["13_24"] += 1
+        elif 24 <= month_diff <= 59:
+            bounce_summary["25_60"] += 1
+
+        # Ranges
+        if month_diff <= 5:
+            bounce_summary["0_6"] += 1
+        if month_diff <= 8:
+            bounce_summary["0_9"] += 1
+        if month_diff <= 11:
+            bounce_summary["0_12"] += 1
+        if month_diff <= 23:
+            bounce_summary["0_24"] += 1
+        bounce_summary["0_60"] += 1  # Always include if within 60 months
+
+    return bounce_summary
+def format_bounce_summary(bounce_summary):
+    labels = {
+        "0_3": "Last 0–3 months",
+        "4_6": "Last 4–6 months",
+        "7_12": "Last 7–12 months",
+        "13_24": "Last 13–24 months",
+        "25_60": "Last 25–60 months",
+        "0_6": "Last 0–6 months",
+        "0_9": "Last 0–9 months",
+        "0_12": "Last 0–12 months",
+        "0_24": "Last 0–24 months",
+        "0_60": "Last 0–60 months"
+    }
+
+    formatted = "\nBounce Summary:\n"
+    for key in labels:
+        formatted += f"• {labels[key]}: {bounce_summary.get(key, 0)} DPDs\n"
+
+    return formatted
 
 def check_condition(value, rules):
     """
@@ -497,36 +1001,57 @@ def check_condition(value, rules):
     return "Invalid"
 
 
-def evaluate_loan_eligibility(bank_name, cibil_score,enquiry_count, dpd_1_30,dpd_1_44, dpd_31_44, dpd_45_above,
-                              car_age, car_owner_age, bounces_0_3, bounces_0_6):
+def evaluate_loan_eligibility(bank_name, cibil_score, enquiry_count, dpd_1_30, dpd_1_44,dpd_1_above, dpd_31_44, dpd_45_above,
+                              car_age, car_owner_age, bounces_0_3, bounces_0_6,mother_0_3,mother_4_6,mother_7_12,mother_13_24,mother_25_60,mother_0_6,mother_0_9,mother_0_12,mother_0_24,mother_0_60):
     """
-    Evaluate loan eligibility dynamically based on the bank's rules.
+    Evaluate loan eligibility based on rules.
+    Returns:
+        - 'Eligible for Loan' if all pass
+        - List of rejection reasons like 'DPD 45 Above: 2' (i.e., field: value)
     """
     bank_rules = BANK_RULES.get(bank_name)
     if not bank_rules:
-        return "Bank not supported"
-
-#dpd_31_44_count
+        return ["Bank not supported"]
+   
     checks = {
-        "CIBIL Score": check_condition(cibil_score, bank_rules["cibil_score"]),
-        "CIBIL Enquiry Count": check_condition(enquiry_count, bank_rules["cibil_enquiry_count"]),
-        "DPD 1-30": check_condition(dpd_1_30, bank_rules["dpd_1_30"]),
-        "DPD 1-44": check_condition(dpd_1_44, bank_rules["dpd_1_44"]),
-        "DPD 31-44": check_condition(dpd_31_44, bank_rules["dpd_31_44"]),
-        "DPD 45 Above": check_condition(dpd_45_above, bank_rules["dpd_45_above"]),
-        "Car Age": check_condition(car_age, bank_rules["car_age"]),
-        "Car Owner Age": check_condition(car_owner_age, bank_rules["car_owner_age"]),
-        #"Loan Amount": check_condition(loan_amount, bank_rules["loan_amount"]),
-        "Bounces 0-3 Months": check_condition(bounces_0_3, bank_rules["bounces_0_3_months"]),
-        "Bounces 0-6 Months": check_condition(bounces_0_6, bank_rules["bounces_0_6_months"])
-    }
+        "CIBIL Score": (cibil_score, bank_rules["cibil_score"]),
+        "CIBIL Enquiry Count": (enquiry_count, bank_rules["cibil_enquiry_count"]),
+        "DPD 1-30": (dpd_1_30, bank_rules["dpd_1_30"]),
+        "DPD 1-44": (dpd_1_44, bank_rules["dpd_1_44"]),
+        "DPD 1-Above": (dpd_1_above, bank_rules["dpd_1_above"]),
+        "DPD 31-44": (dpd_31_44, bank_rules["dpd_31_44"]),
+        "DPD 45 Above": (dpd_45_above, bank_rules["dpd_45_above"]),
+        "Car Age": (car_age, bank_rules["car_age"]),
+        "Car Owner Age": (car_owner_age, bank_rules["car_owner_age"]),
+        "Bounces 0-3 Months": (bounces_0_3, bank_rules["bounces_0_3_months"]),
+        "Bounces 0-6 Months": (bounces_0_6, bank_rules["bounces_0_6_months"]),
+        "Bounces mother auto loan 0-3 months":(mother_0_3,bank_rules["mother_0_3"]),
+        "Bounces mother auto loan 4-6 months":(mother_4_6,bank_rules["mother_4_6"]),
+        "Bounces mother auto loan 7-12 months":(mother_7_12,bank_rules["mother_7_12"]),
+        "Bounces mother auto loan 13-24 months":(mother_13_24,bank_rules["mother_13_24"]),
+        "Bounces mother auto loan 25-60 months":(mother_25_60,bank_rules["mother_25_60"]),
+        "Bounces mother auto loan 0-6 months":(mother_0_6,bank_rules["mother_0_6"]),
+        "Bounces mother auto loan 0-9 months":(mother_0_9,bank_rules["mother_0_9"]),
+        "Bounces mother auto loan 0-12 months":(mother_0_12,bank_rules["mother_0_12"]),
+        "Bounces mother auto loan 0-24 months":(mother_0_24,bank_rules["mother_0_24"]),
+        "Bounces mother auto loan 0-60 months":(mother_0_60,bank_rules["mother_0_60"])
+            
+        }
+
+    rejection_reasons = []
+
+    for key, (value, rule) in checks.items():
+        if check_condition(value, rule) == "REJECT":
+            rejection_reasons.append(f"{key}: {value}")  # Only include field and its value
+
+    if rejection_reasons:
+        return rejection_reasons
+    else:
+        return "Eligible for Loan"
 
 
-    for key, result in checks.items():
-        if result == "REJECT":
-            return f"{key}: {result}"
 
-    return "Eligible for Loan"
+
 
 
 
@@ -1030,20 +1555,19 @@ if submit:
 
             data = fetch_cibil_data(mobile, pan, name, gender, consent, TOKEN)
             data_car = fetch_car_data(id_number, TOKEN)
-
             if data:
                 st.success("CIBIL data fetched successfully!")
-                #st.json(data)  # Optional: To show the JSON in UI
+               #st.json(data)  # Optional: To show the JSON in UI
 
             if data_car:
-                st.success("Car data fetched successfully!")
-                #st.json(data_car)
+               st.success("Car data fetched successfully!")
+               #st.json(data_car)
 
 #https://developers.kudosfinance.in/docs/list-of-cibil-field-input
-            #file_path = "data7.json"
+            #file_path = "data.json"
             #data = load_and_print_json(file_path)
             ## Example usage
-            #file_path = "car7.json"
+            #file_path = "car8.json"
             #data_car = load_and_print_json(file_path)
             # Example usage (you'll ask for specific fields)
             name = get_field("data.name")  # Would print: Vishal Rathore
@@ -1146,17 +1670,67 @@ if submit:
             # Store individual values from summary dictionary into variables
             dpd_1_30_count = dpd_summary.get("dpd_1_30", 0)
             dpd_1_45_count = dpd_summary.get("dpd_1_45", 0)
+            dpd_1_above = dpd_summary.get("dpd_1_above", 0)
             dpd_31_44_count = dpd_summary.get("dpd_31_44", 0)
             dpd_45_above = dpd_summary.get("dpd_45_above", 0)
             
             print(dpd_1_30_count)
             print(dpd_1_45_count)
+            print(dpd_1_above)
             print(dpd_31_44_count)
             print(dpd_45_above)
             
             bounce_0_3 = bounces["bounces_0_3_months"]
 
             bounces_0_6 =  bounces["bounces_0_6_months"]
+
+
+            
+            #calculation of mother auto loan
+            mother_loan = find_mother_auto_loan(data, data_car)
+            mother_0_3 =    0
+            mother_4_6 =0
+            mother_7_12 = 0
+            mother_13_24 = 0
+            mother_25_60 = 0
+            mother_0_6 =0
+            mother_0_9 =0
+            mother_0_12 = 0
+            mother_0_24 = 0
+            mother_0_60 = 0
+            if mother_loan:
+                bounces = calculate_bounce_ranges(mother_loan)
+                print("✅ Mother Loan Found")
+                print("Account Number:", mother_loan["accountNumber"])
+                print("Bank:", mother_loan.get("memberShortName", "Unknown"))
+                print("Loan Opened On:", mother_loan.get("dateOpened", "N/A"))
+                print(format_bounce_summary(bounces))
+                mother_0_3 = bounces["0_3"]
+                mother_4_6 = bounces["4_6"]
+                mother_7_12 = bounces["7_12"]
+                mother_13_24 = bounces["13_24"]
+                mother_25_60 = bounces["25_60"]
+                mother_0_6 = bounces["0_6"]
+                mother_0_9 = bounces["0_9"]
+                mother_0_12 = bounces["0_12"]
+                mother_0_24 = bounces["0_24"]
+                mother_0_60 = bounces["0_60"]
+            else:
+                print("❌ No matching Auto/Car loan found.")
+            
+            
+             # Print each variable
+            print(f"mother_0_3: {mother_0_3}")
+            print(f"mother_4_6: {mother_4_6}")
+            print(f"mother_7_12: {mother_7_12}")
+            print(f"mother_13_24: {mother_13_24}")
+            print(f"mother_25_60: {mother_25_60}")
+            print(f"mother_0_6: {mother_0_6}")
+            print(f"mother_0_9: {mother_0_9}")
+            print(f"mother_0_12: {mother_0_12}")
+            print(f"mother_0_24: {mother_0_24}")
+            print(f"mother_0_60: {mother_0_60}")
+            
 
             banks = ['HERO', 'TATA', 'BAJAJ','IDFC', 'YES BANK', 'PIRAMAL', 'HDFC', 'ICICI', 'POONAWALA', 'AU', 'CHOLA','AXIS']
 
@@ -1170,24 +1744,34 @@ if submit:
                     int(enquiry_count), 
                     int(dpd_1_30_count), 
                     int(dpd_1_45_count),
+                    int(dpd_1_above),
                     int(dpd_31_44_count),
                     int(dpd_45_above),
                     int(total_months), 
                     int(year_diff), 
                     int(bounce_0_3), 
-                    int(bounces_0_6)
+                    int(bounces_0_6),
+                    int(mother_0_3),
+                    int(mother_4_6),
+                    int(mother_7_12),
+                    int(mother_13_24),
+                    int(mother_25_60),
+                    int(mother_0_6),
+                    int(mother_0_9),
+                    int(mother_0_12),
+                    int(mother_0_24),
+                    int(mother_0_60)
                 )
             
                 if result == "Eligible for Loan":
                     accepted_banks.append(bank)
                 else:
                     rejected_banks[bank] = result  # Store rejection reason
-            bank_rules = BANK_RULES.get("HDFC")
-            
+           
+            # Usage
 
-            print(dpd_45_above)
-            A = check_condition(dpd_45_above, bank_rules["dpd_45_above"])
-            print(A)
+
+          
             # Streamlit UI
             st.title("Loan Eligibility Results")
 

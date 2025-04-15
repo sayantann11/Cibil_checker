@@ -1023,8 +1023,8 @@ def evaluate_loan_eligibility(bank_name, cibil_score, enquiry_count, dpd_1_30, d
         "DPD 45 Above": (dpd_45_above, bank_rules["dpd_45_above"]),
         "Car Age": (car_age, bank_rules["car_age"]),
         "Car Owner Age": (car_owner_age, bank_rules["car_owner_age"]),
-        "Bounces 0-3 Months": (bounces_0_3, bank_rules["bounces_0_3_months"]),
-        "Bounces 0-6 Months": (bounces_0_6, bank_rules["bounces_0_6_months"]),
+        "other Bounces 0-3 Months": (bounces_0_3, bank_rules["bounces_0_3_months"]),
+        "other Bounces 0-6 Months": (bounces_0_6, bank_rules["bounces_0_6_months"]),
         "Bounces mother auto loan 0-3 months":(mother_0_3,bank_rules["mother_0_3"]),
         "Bounces mother auto loan 4-6 months":(mother_4_6,bank_rules["mother_4_6"]),
         "Bounces mother auto loan 7-12 months":(mother_7_12,bank_rules["mother_7_12"]),
@@ -1530,11 +1530,11 @@ st.markdown("### Please enter your details below:")
 
 # User Input Form with Sidebar
 with st.form("user_form"):
-    mobile = st.text_input("📞 Mobile Number", "")
-    pan = st.text_input("🆔 PAN", "")
-    name = st.text_input("👤 Name", "")
+    mobile = st.text_input("📞 Mobile Number", "8554947999")
+    pan = st.text_input("🆔 PAN", "AQUPN6092K")
+    name = st.text_input("👤 Name", "Prasad Naik")
     gender = st.selectbox("⚧ Gender", ["Male", "Female", "Other"], index=0)
-    id_number = st.text_input("🆔 Vehicle ID", "")
+    id_number = st.text_input("🆔 Vehicle ID", "MH04KW6003")
     consent = st.selectbox("✔ Consent", ["Y", "N"], index=0)
     submit = st.form_submit_button("🚀 Submit")
 # TOKEN for API authorization
@@ -1564,7 +1564,7 @@ if submit:
                #st.json(data_car)
 
 #https://developers.kudosfinance.in/docs/list-of-cibil-field-input
-            #file_path = "data.json"
+            #file_path = "data8.json"
             #data = load_and_print_json(file_path)
             ## Example usage
             #file_path = "car8.json"
@@ -1719,17 +1719,7 @@ if submit:
                 print("❌ No matching Auto/Car loan found.")
             
             
-             # Print each variable
-            print(f"mother_0_3: {mother_0_3}")
-            print(f"mother_4_6: {mother_4_6}")
-            print(f"mother_7_12: {mother_7_12}")
-            print(f"mother_13_24: {mother_13_24}")
-            print(f"mother_25_60: {mother_25_60}")
-            print(f"mother_0_6: {mother_0_6}")
-            print(f"mother_0_9: {mother_0_9}")
-            print(f"mother_0_12: {mother_0_12}")
-            print(f"mother_0_24: {mother_0_24}")
-            print(f"mother_0_60: {mother_0_60}")
+
             
 
             banks = ['HERO', 'TATA', 'BAJAJ','IDFC', 'YES BANK', 'PIRAMAL', 'HDFC', 'ICICI', 'POONAWALA', 'AU', 'CHOLA','AXIS']
@@ -1787,8 +1777,38 @@ if submit:
             if rejected_banks:
                 for bank, reason in rejected_banks.items():
                     st.markdown(f"**{bank}**: <span style='color:red; font-weight:bold;'>{reason}</span>", unsafe_allow_html=True)
+                st.success("✅ Mother Loan Found")
+                st.write("**Account Number:**", mother_loan["accountNumber"])
+                st.write("**Bank:**", mother_loan.get("memberShortName", "Unknown"))
+                st.write("**Loan Opened On:**", mother_loan.get("dateOpened", "N/A"))
+                st.markdown("""
+                **Bounce Summary:**
+                • Last 0–3 months: {} DPDs  
+                • Last 4–6 months: {} DPDs  
+                • Last 7–12 months: {} DPDs  
+                • Last 13–24 months: {} DPDs  
+                • Last 25–60 months: {} DPDs  
+                • Last 0–6 months: {} DPDs  
+                • Last 0–9 months: {} DPDs  
+                • Last 0–12 months: {} DPDs  
+                • Last 0–24 months: {} DPDs  
+                • Last 0–60 months: {} DPDs  
+                """.format(
+                    bounces["0_3"],
+                    bounces["4_6"],
+                    bounces["7_12"],
+                    bounces["13_24"],
+                    bounces["25_60"],
+                    bounces["0_6"],
+                    bounces["0_9"],
+                    bounces["0_12"],
+                    bounces["0_24"],
+                    bounces["0_60"]
+                ))  
             else:
                 st.markdown("_No banks rejected._")
+
+            
  
 
 

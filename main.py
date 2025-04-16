@@ -1364,7 +1364,7 @@ def count_bounces_0_12_months(json_data):
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-def count_bounces_by_period(data, current_date=None):
+def count_bounces_by_period(data, current_date=None, exclude_account_number=None):
     if current_date is None:
         current_date = datetime.today()
     else:
@@ -1383,8 +1383,14 @@ def count_bounces_by_period(data, current_date=None):
 
     for account in data.get("data", {}).get("credit_report", [])[0].get("accounts", []):
         account_type = account.get("accountType", "").lower()
+        account_number = account.get("accountNumber")
+
         if "loan" not in account_type:
             continue  # Filter only loan accounts
+
+        # Skip the mother loan account
+        if exclude_account_number and account_number == exclude_account_number:
+            continue
 
         for record in account.get("monthlyPayStatus", []):
             date_str = record.get("date")
@@ -1409,6 +1415,7 @@ def count_bounces_by_period(data, current_date=None):
 
     return bounces
 
+
 def count_custom_dpd_buckets(data):
     today = datetime.today()
     start_date = (today.replace(day=1) - relativedelta(months=12))
@@ -1426,9 +1433,10 @@ def count_custom_dpd_buckets(data):
         account_type = account.get("accountType", "").lower()
 
         # Consider only loan-type accounts (adjust as needed)
+        
         if "loan" not in account_type:
             continue
-
+        
         for record in account.get("monthlyPayStatus", []):
             date_str = record.get("date")
             status_str = record.get("status")
@@ -1566,7 +1574,7 @@ if submit:
 #https://developers.kudosfinance.in/docs/list-of-cibil-field-input
             #file_path = "data8.json"
             #data = load_and_print_json(file_path)
-            ## Example usage
+            # Example usage
             #file_path = "car8.json"
             #data_car = load_and_print_json(file_path)
             # Example usage (you'll ask for specific fields)
@@ -1661,12 +1669,24 @@ if submit:
             # Example usage
             dpd_summary = count_custom_dpd_buckets(data)
             print("Custom DPD Summary in Last 12 Months:", dpd_summary)
-
+            mother_loan = find_mother_auto_loan(data, data_car)
             # Example usage
-            bounces = count_bounces_by_period(data, current_date="2025-04-01")
+            # Get today's date in "YYYY-MM-DD" format
+            current_date = datetime.today().strftime("%Y-%m-%d")
+
+            # Extract mother loan account number if available
+            exclude_account_number = mother_loan.get("accountNumber") if mother_loan else None
+
+            print(exclude_account_number)
+            print(current_date)
+            bounces = count_bounces_by_period(data, current_date=current_date, exclude_account_number=exclude_account_number)
             print("Bounce Summary:")
             print(bounces)
-           
+            
+
+
+
+
             # Store individual values from summary dictionary into variables
             dpd_1_30_count = dpd_summary.get("dpd_1_30", 0)
             dpd_1_45_count = dpd_summary.get("dpd_1_45", 0)
@@ -1674,11 +1694,11 @@ if submit:
             dpd_31_44_count = dpd_summary.get("dpd_31_44", 0)
             dpd_45_above = dpd_summary.get("dpd_45_above", 0)
             
-            print(dpd_1_30_count)
-            print(dpd_1_45_count)
-            print(dpd_1_above)
-            print(dpd_31_44_count)
-            print(dpd_45_above)
+            print("dpd 1-30",dpd_1_30_count)
+            print("dpd 1-45",dpd_1_45_count)
+            print("dpd 1 and above",dpd_1_above)
+            print("dpd 31-45",dpd_31_44_count)
+            print("dpd 45 and above",dpd_45_above)
             
             bounce_0_3 = bounces["bounces_0_3_months"]
 
@@ -1687,7 +1707,7 @@ if submit:
 
             
             #calculation of mother auto loan
-            mother_loan = find_mother_auto_loan(data, data_car)
+            
             mother_0_3 =    0
             mother_4_6 =0
             mother_7_12 = 0

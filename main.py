@@ -125,7 +125,7 @@ BANK_RULES = {
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "REJECT"), (4, float('inf'), "REJECT")
         ],
         "mother_0_3": [
-            (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, float('inf'), "REJECT")
+            (0, 0, "PASS"), (1, 1, "REJECT"), (2, 2, "REJECT"), (3, float('inf'), "REJECT")
         ],
         "mother_4_6": [
             (0, 2, "PASS"),(3, float('inf'), "REJECT")

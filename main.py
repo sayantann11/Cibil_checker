@@ -24,7 +24,7 @@ BANK_RULES = {
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
         ],
         "dpd_1_above": [
-            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
+            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "REJECT")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "REJECT")
@@ -88,16 +88,16 @@ BANK_RULES = {
             (720, 724, "PASS"), (725, 749, "PASS"), (750, float('inf'), "PASS")
         ],
         "cibil_enquiry_count": [
-            (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "REJECT"), (11, float('inf'), "REJECT")
+            (0, 0, "PASS"), (1, 6, "PASS"), (7, 10, "REJECT"), (11, float('inf'), "REJECT")
         ],
         "dpd_1_30": [
-            (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "REJECT"), (11, float('inf'), "REJECT")
+            (0, 0, "PASS"), (1, 6, "PASS"), (6, 10, "REJECT"), (11, float('inf'), "REJECT")
         ],
         "dpd_1_44": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
         ],
         "dpd_1_above": [
-            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
+            (0, 0, "PASS"), (1, 1, "PASS"), (6, float('inf'), "REJECT")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "REJECT")
@@ -134,10 +134,10 @@ BANK_RULES = {
             (0, 2, "PASS"),(3, float('inf'), "REJECT")
         ],
         "mother_13_24": [
-            (0, 3, "PASS"),(4, float('inf'), "PASS")
+            (0, 3, "PASS"),(4, float('inf'), "REJECT")
         ],
         "mother_25_60": [
-            (0, 5, "PASS"),(6, float('inf'), "PASS")
+            (0, 5, "PASS"),(6, float('inf'), "REJECT")
         ],
         "mother_0_6": [
             (0, 3, "PASS"),(4, float('inf'), "PASS")
@@ -162,16 +162,16 @@ BANK_RULES = {
             (720, 724, "PASS"), (725, 749, "PASS"), (750, float('inf'), "PASS")
         ],
         "cibil_enquiry_count": [
-            (0, 0, "PASS"), (1, 5, "PASS"),(6,7,'PASS'), (6, 10, "PASS"), (11, float('inf'), "REJECT")
+            (0, 0, "PASS"), (1, 5, "PASS"),(6,9,'PASS'), (10, 10, "REJECT"), (11, float('inf'), "REJECT")
         ],
         "dpd_1_30": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "REJECT"), (11, float('inf'), "REJECT")
         ],
         "dpd_1_44": [
-            (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
+            (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "REJECT")
         ],
         "dpd_1_above": [
-            (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "REJECT")
+            (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 4, "PASS"), (5, float('inf'), "REJECT")
@@ -207,10 +207,10 @@ BANK_RULES = {
             (0, 2, "PASS"),(3, float('inf'), "REJECT")
         ],
         "mother_13_24": [
-            (0, 3, "PASS"),(4, float('inf'), "PASS")
+            (0, 3, "PASS"),(4, float('inf'), "REJECT")
         ],
         "mother_25_60": [
-            (0, 5, "PASS"),(6, float('inf'), "PASS")
+            (0, 5, "PASS"),(6, float('inf'), "REJECT")
         ],
         "mother_0_6": [
             (0, 3, "PASS"),(4, float('inf'), "PASS")
@@ -244,7 +244,7 @@ BANK_RULES = {
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
         ],
         "dpd_1_above": [
-            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
+            (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 10, "REJECT"), (11, float('inf'), "REJECT")
@@ -265,10 +265,10 @@ BANK_RULES = {
             (0, 100000, "PASS"), (100001, 500000, "REJECT"), (500001, float('inf'), "REJECT")
         ],
         "bounces_0_3_months": [
-            (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, float('inf'), "REJECT")
+            (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "REJECT"), (3, float('inf'), "REJECT")
         ],
         "bounces_0_6_months": [
-            (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "PASS"), (4, float('inf'), "REJECT")
+            (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "REJECT"), (4, float('inf'), "REJECT")
         ],
         "mother_0_3": [
             (0, 0, "PASS"),(1, float('inf'), "REJECT")
@@ -322,7 +322,7 @@ BANK_RULES = {
             (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "PASS"), (11, float('inf'), "PASS")
         ],
         "dpd_45_above": [
-            (0, 1, "PASS"), (1, float('inf'), "REJECT")
+            (0, 1, "PASS"), (2, float('inf'), "REJECT")
         ],
         "car_age": [
             (0, 84, "PASS"), (85, 96, "PASS"), (97, 108, "REJECT"), (109, 120, "REJECT"),
@@ -364,13 +364,13 @@ BANK_RULES = {
             (0, 3, "PASS"),(4, float('inf'), "REJECT")
         ],
         "mother_0_12": [
-            (0, 3, "PASS"),(4, float('inf'), "PASS")
+            (0, 3, "PASS"),(4, float('inf'), "REJECT")
         ],
         "mother_0_24": [
-            (0, 3, "PASS"),(4, float('inf'), "PASS")
+            (0, 3, "PASS"),(5, float('inf'), "REJECT")
         ],
         "mother_0_60": [
-            (0, 3, "PASS"),(4, float('inf'), "PASS")
+            (0, 3, "PASS"),(8, float('inf'), "REJECT")
         ]
 
     },
@@ -389,7 +389,7 @@ BANK_RULES = {
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
         ],
         "dpd_1_above": [
-            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
+            (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "REJECT")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"),(2, float('inf'), "REJECT")
@@ -462,7 +462,7 @@ BANK_RULES = {
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
         ],
         "dpd_1_above": [
-            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
+            (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "REJECT")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 10, "REJECT"), (11, float('inf'), "REJECT")
@@ -534,10 +534,10 @@ BANK_RULES = {
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
         ],
         "dpd_1_above": [
-            (0, 5, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
+            (0, 5, "PASS"), (1, 5, "PASS"), (6, float('inf'), "REJECT")
         ],
         "dpd_31_44": [
-            (0, 0, "PASS"), (1, 2, "PASS"), (3, 10, "REJECT"), (11, float('inf'), "REJECT")
+            (0, 0, "PASS"), (1, 1, "PASS"), (2, 10, "REJECT"), (11, float('inf'), "REJECT")
         ],
         "dpd_45_above": [
             (0, 0, "PASS"), (1, float('inf'), "REJECT")
@@ -582,13 +582,13 @@ BANK_RULES = {
             (0, 1, "PASS"),(2, float('inf'), "REJECT")
         ],
         "mother_0_12": [
-            (0, 1, "PASS"),(4, float('inf'), "REJECT")
+            (0, 1, "PASS"),(2, float('inf'), "REJECT")
         ],
         "mother_0_24": [
-            (0, 2, "PASS"),(3, float('inf'), "PASS")
+            (0, 2, "PASS"),(3, float('inf'), "REJECT")
         ],
         "mother_0_60": [
-            (0, 4, "PASS"),(5, float('inf'), "PASS")
+            (0, 4, "PASS"),(5, float('inf'), "REJECT")
         ]
     },
     "ICICI": {
@@ -597,7 +597,7 @@ BANK_RULES = {
             (720, 724, "PASS"), (725, 749, "PASS"), (750, float('inf'), "PASS")
         ],
        "cibil_enquiry_count": [
-            (0, 0, "PASS"), (1, 5, "PASS"),(6,7,'REJECT'), (8, 10, "REJECT"), (11, float('inf'), "REJECT")
+            (0, 0, "PASS"), (1, 6, "PASS"),(7,7,'REJECT'), (8, 10, "REJECT"), (11, float('inf'), "REJECT")
         ],
         "dpd_1_30": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "REJECT"), (11, float('inf'), "REJECT")
@@ -606,7 +606,7 @@ BANK_RULES = {
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
         ],
         "dpd_1_above": [
-            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
+            (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "REJECT")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 10, "REJECT"), (11, float('inf'), "REJECT")
@@ -678,7 +678,7 @@ BANK_RULES = {
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
         ],
         "dpd_1_above": [
-            (0, 0, "PASS"), (1, 1, "PASS"), (2, float('inf'), "PASS")
+            (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "REJECT")
         ],
         "dpd_31_44": [
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 10, "REJECT"), (11, float('inf'), "REJECT")
@@ -705,7 +705,7 @@ BANK_RULES = {
             (0, 0, "PASS"), (1, 1, "PASS"), (2, 2, "PASS"), (3, 3, "PASS"), (4, float('inf'), "REJECT")
         ],
         "mother_0_3": [
-            (0, 1, "PASS"),(2, float('inf'), "REJECT")
+            (0, 1, "PASS"),(1, float('inf'), "REJECT")
         ],
         "mother_4_6": [
             (0, 2, "PASS"),(3, float('inf'), "REJECT")
@@ -744,10 +744,10 @@ BANK_RULES = {
             (0, 0, "PASS"), (1, 5, "PASS"),(6,7,'PASS'), (6, 10, "PASS"), (11, float('inf'), "PASS")
         ],
         "dpd_1_30": [
-            (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "PASS"), (11, float('inf'), "REJECT")
+            (0, 0, "PASS"), (1, 5, "PASS"), (6, 9, "PASS"), (10, float('inf'), "REJECT")
         ],
                 "dpd_1_44": [
-            (0, 0, "PASS"), (1, 10, "PASS"), (11, float('inf'), "REJECT")
+            (0, 0, "PASS"), (1, 9, "PASS"), (10, float('inf'), "REJECT")
         ],
         "dpd_1_above": [
             (0, 0, "PASS"), (1, 9, "PASS"), (10, float('inf'), "REJECT")
@@ -819,7 +819,7 @@ BANK_RULES = {
             (0, 0, "PASS"), (1, 5, "PASS"), (6, 10, "REJECT"), (11, float('inf'), "REJECT")
         ],
                 "dpd_1_44": [
-            (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "PASS")
+            (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "REJECT")
         ],
                 "dpd_1_above": [
             (0, 0, "PASS"), (1, 5, "PASS"), (6, float('inf'), "REJECT")
@@ -1574,7 +1574,7 @@ if submit:
 #https://developers.kudosfinance.in/docs/list-of-cibil-field-input
             #file_path = "data8.json"
             #data = load_and_print_json(file_path)
-            # Example usage
+            #        #  Example usage
             #file_path = "car8.json"
             #data_car = load_and_print_json(file_path)
             # Example usage (you'll ask for specific fields)
